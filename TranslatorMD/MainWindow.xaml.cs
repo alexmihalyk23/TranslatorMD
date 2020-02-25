@@ -12,14 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Speech.Synthesis;
 
 namespace TranslatorMD
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
+    
     public partial class MainWindow : Window
     {
+        SpeechSynthesizer talk = new SpeechSynthesizer();
         public MainWindow()
         {
             InitializeComponent();
@@ -38,6 +41,11 @@ namespace TranslatorMD
         private void Copy_Click(object sender, RoutedEventArgs e)
         {
             Clipboard.SetText(textBlock.Text);
+        }
+
+        private void Speak_Click(object sender, RoutedEventArgs e)
+        {
+            talk.Speak(textBlock.Text);
         }
     }
 }

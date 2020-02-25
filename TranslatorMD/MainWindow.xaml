@@ -46,7 +46,7 @@
             <Button Style="{StaticResource ResourceKey=MaterialDesignFloatingActionMiniAccentButton}" Width="35" Height="35" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Margin="549,16,56,301" x:Name="Copy" Click="Copy_Click">
                 <materialDesign:PackIcon Kind="ContentCopy" Height="25" Width="25"/>
             </Button>
-            <Button Style="{StaticResource ResourceKey=MaterialDesignFloatingActionMiniAccentButton}" Width="35" Height="35" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Margin="589,16,16,301" >
+            <Button Style="{StaticResource ResourceKey=MaterialDesignFloatingActionMiniAccentButton}" Width="35" Height="35" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Margin="589,16,16,301" x:Name="Speak" Click="Speak_Click">
                 <materialDesign:PackIcon Kind="VolumeHigh" Height="25" Width="25"/>
             </Button>
         </Grid>
