@@ -34,5 +34,10 @@ namespace TranslatorMD
         {
             System.Diagnostics.Process.Start("https://github.com/HCINSU803CA1/MihaylyukAA");
         }
+
+        private void Copy_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(textBlock.Text);
+        }
     }
 }

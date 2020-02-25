@@ -39,11 +39,11 @@
 
             <materialDesign:Card Padding="32" Margin="16" Background="#FF1A73E9" Foreground="AliceBlue">
 
-                <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Text="{Binding ElementName=InputText,Path=Text}" FontSize="20">
+                <TextBlock x:Name="textBlock" Style="{DynamicResource MaterialDesignTitleTextBlock}" Text="{Binding ElementName=InputText,Path=Text}" FontSize="20">
 
                 </TextBlock>
             </materialDesign:Card>
-            <Button Style="{StaticResource ResourceKey=MaterialDesignFloatingActionMiniAccentButton}" Width="35" Height="35" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Margin="549,16,56,301" >
+            <Button Style="{StaticResource ResourceKey=MaterialDesignFloatingActionMiniAccentButton}" Width="35" Height="35" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Margin="549,16,56,301" x:Name="Copy" Click="Copy_Click">
                 <materialDesign:PackIcon Kind="ContentCopy" Height="25" Width="25"/>
             </Button>
             <Button Style="{StaticResource ResourceKey=MaterialDesignFloatingActionMiniAccentButton}" Width="35" Height="35" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Margin="589,16,16,301" >
