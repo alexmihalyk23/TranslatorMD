@@ -35,7 +35,7 @@ namespace TranslatorMD
 
         private void Git_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/HCINSU803CA1/MihaylyukAA");
+            System.Diagnostics.Process.Start("https://github.com/alexmihalyk23");
         }
 
         private void Copy_Click(object sender, RoutedEventArgs e)
@@ -46,6 +46,14 @@ namespace TranslatorMD
         private void Speak_Click(object sender, RoutedEventArgs e)
         {
             talk.Speak(textBlock.Text);
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
     }
 }
