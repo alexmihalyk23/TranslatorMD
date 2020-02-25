@@ -31,8 +31,8 @@
             </Grid>
             <Grid Grid.Row="1" Grid.RowSpan="2">
                 <TextBox x:Name="InputText" materialDesign:HintAssist.Hint="Нажмите, для ввода" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="5 5" FontSize="24" FontFamily="Bahnschrift Light"/>
-                <Button Style="{StaticResource ResourceKey=MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Foreground="White" Background="#FF1A73E9" BorderBrush="#FF1A73E9"  Margin="590,45,22,367" >
-                    <materialDesign:PackIcon Kind="ArrowRight" Height="25" Width="25"/>
+                <Button Style="{StaticResource ResourceKey=MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Foreground="White" Background="#FF1A73E9" BorderBrush="#FF1A73E9"  Margin="581,50,30,362" >
+                    <materialDesign:PackIcon Kind="ArrowRight" Height="21" Width="21"/>
                 </Button>
             </Grid>
             <Grid Grid.Row="2" Background="White" >
