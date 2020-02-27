@@ -1,0 +1,96 @@
+﻿<Window x:Class="TranslatorMD.Views.MainWindow" Icon="Icon.ico"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:viewmodels="clr-namespace:TranslatorMD.ViewModels"
+        FontFamily="{DynamicResource MaterialDesignFont}"   WindowStartupLocation="CenterScreen"  WindowStyle="None" Width="640" Height="480" ResizeMode="NoResize" >
+
+    <Window.DataContext>
+        <viewmodels:MainWindowViewModel/>
+    </Window.DataContext>
+   
+    <Border Background="GhostWhite" BorderBrush="#FF1A73E9" BorderThickness="2">
+        <Grid >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="97*"/>
+                <RowDefinition Height="386*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.ColumnSpan="1" Background="#FF1A73E9" >
+
+                <TextBlock Text="MD Переводчик" Margin ="10 0 0 0" HorizontalAlignment="Left" FontSize="24" FontFamily="Leelawadee UI" Foreground="White"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+
+                    <Button x:Name="git" Style="{StaticResource ResourceKey=MaterialDesignFloatingActionMiniAccentButton}" Width="35" Height="35" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"  Command="{Binding GitCommand}">
+                        <materialDesign:PackIcon Kind="GithubCircle" Height="25" Width="25"/>
+                    </Button>
+                    <Button x:Name="power" Style="{StaticResource ResourceKey=MaterialDesignFloatingActionMiniAccentButton}" Width="35" Height="35" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Command="{Binding CloseAppCommand}">
+                        <Button.Content>
+                            <StackPanel>
+
+                                <materialDesign:PackIcon Kind="Power" Height="25" Width="25"/>
+                            </StackPanel>
+
+                        </Button.Content>
+
+                    </Button>
+
+
+
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1" Grid.RowSpan="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <ComboBox
+    materialDesign:ComboBoxAssist.ClassicMode="True"
+    Margin="20 -45 0 8"
+    HorizontalAlignment="Left">
+                    <ComboBoxItem
+      IsSelected="True">
+                        Русский
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Англиский
+                    </ComboBoxItem>
+
+                </ComboBox>
+            </Grid>
+            <Grid Grid.Row="1" Grid.RowSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="625*"/>
+                    <ColumnDefinition Width="11*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+
+                <TextBox materialDesign:HintAssist.Hint="Нажмите, для ввода" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="5,40,5,5" FontSize="24" FontFamily="Bahnschrift Light" Grid.ColumnSpan="2" Text="{Binding SpeakText}" />
+                <Button Style="{StaticResource ResourceKey=MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Foreground="White" Background="#FF1A73E9" BorderBrush="#FF1A73E9"  Margin="581,46,14.916,362" >
+                    <materialDesign:PackIcon Kind="ArrowRight" Height="21" Width="21"/>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="2" Background="White" >
+
+                <materialDesign:Card Padding="32" Margin="16" Background="#FF1A73E9" Foreground="AliceBlue">
+
+                    <TextBlock x:Name="textBlock" Style="{DynamicResource MaterialDesignTitleTextBlock}" Text="{Binding CopyText}" FontSize="20">
+
+                    </TextBlock>
+                </materialDesign:Card>
+                <Button Style="{StaticResource ResourceKey=MaterialDesignFloatingActionMiniAccentButton}" Width="35" Height="35" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Margin="549,16,56,301" Command="{Binding CopyCommand}" x:Name="Copy">
+                    <materialDesign:PackIcon Kind="ContentCopy" Height="25" Width="25"/>
+                </Button>
+                <Button Style="{StaticResource ResourceKey=MaterialDesignFloatingActionMiniAccentButton}" Width="35" Height="35" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Margin="589,16,16,301" x:Name="Speak" Command="{Binding SpeakCommand}">
+                    <materialDesign:PackIcon Kind="VolumeHigh" Height="25" Width="25"/>
+                </Button>
+            </Grid>
+        </Grid>
+    </Border>
+
+</Window>

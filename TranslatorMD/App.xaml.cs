@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using TranslatorMD.ViewModels;
+using TranslatorMD.Views;
 
 namespace TranslatorMD
 {
@@ -14,13 +15,6 @@ namespace TranslatorMD
     /// </summary>
     public partial class App : Application
     {
-        private void OnStartup(object sender, StartupEventArgs e)
-        {
-            
-
-            MainView view = new MainView(); // создали View
-            MainViewModel viewModel = new ViewModels.MainViewModel(); // Создали ViewModel
-            
-        }
+        
     }
 }
