@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:viewmodels="clr-namespace:TranslatorMD.ViewModels"
-        FontFamily="{DynamicResource MaterialDesignFont}"   WindowStartupLocation="CenterScreen"  WindowStyle="None" Width="640" Height="480" ResizeMode="NoResize" >
+        FontFamily="{DynamicResource MaterialDesignFont}"   WindowStartupLocation="CenterScreen"  WindowStyle="None" Width="640" Height="480"  ResizeMode="NoResize" UseLayoutRounding="False" >
 
     <Window.DataContext>
         <viewmodels:MainWindowViewModel/>
     </Window.DataContext>
-   
+
     <Border Background="GhostWhite" BorderBrush="#FF1A73E9" BorderThickness="2">
         <Grid >
 
@@ -19,8 +19,7 @@
                 <RowDefinition Height="97*"/>
                 <RowDefinition Height="386*"/>
             </Grid.RowDefinitions>
-            <Grid Grid.ColumnSpan="1" Background="#FF1A73E9" >
-
+            <Grid x:Name="mousedown" Grid.ColumnSpan="1" Background="#FF1A73E9" >
                 <TextBlock Text="MD Переводчик" Margin ="10 0 0 0" HorizontalAlignment="Left" FontSize="24" FontFamily="Leelawadee UI" Foreground="White"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
 
@@ -46,19 +45,17 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
+                <Label HorizontalAlignment="Left" Margin="4" FontSize="20">Перевести c</Label>
                 <ComboBox
     materialDesign:ComboBoxAssist.ClassicMode="True"
-    Margin="20 -45 0 8"
-    HorizontalAlignment="Left">
-                    <ComboBoxItem
-      IsSelected="True">
-                        Русский
-                    </ComboBoxItem>
-                    <ComboBoxItem>
-                        Англиский
-                    </ComboBoxItem>
+    Margin="148,0,0,50"
+    HorizontalAlignment="Left" ItemsSource="{Binding Lang}" SelectedValue="en" SelectedItem="{Binding SelectedLang, Mode=TwoWay}" FontSize="20" Height="32"/>
+                <Label HorizontalAlignment="Center" Margin="4" FontSize="20">Перевести на</Label>
+                <ComboBox
+    materialDesign:ComboBoxAssist.ClassicMode="True"
+    Margin="180,0,0,50"
+    HorizontalAlignment="Center" ItemsSource="{Binding Lang_to}" SelectedValue="ru" SelectedItem="{Binding SelectedLang_to, Mode=TwoWay}" FontSize="20" Height="32"/>
 
-                </ComboBox>
             </Grid>
             <Grid Grid.Row="1" Grid.RowSpan="2">
                 <Grid.ColumnDefinitions>
@@ -70,8 +67,8 @@
                 </Grid.RowDefinitions>
 
 
-                <TextBox materialDesign:HintAssist.Hint="Нажмите, для ввода" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="5,40,5,5" FontSize="24" FontFamily="Bahnschrift Light" Grid.ColumnSpan="2" Text="{Binding SpeakText}" />
-                <Button Style="{StaticResource ResourceKey=MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Foreground="White" Background="#FF1A73E9" BorderBrush="#FF1A73E9"  Margin="581,46,14.916,362" >
+                <TextBox materialDesign:HintAssist.Hint="Нажмите, для ввода" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="5,40,5,5" FontSize="24" FontFamily="Bahnschrift Light" Grid.ColumnSpan="2" Text="{Binding InputText}"/>
+                <Button Style="{StaticResource ResourceKey=MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Foreground="White" Background="#FF1A73E9" BorderBrush="#FF1A73E9"  Margin="581,46,14.916,362" Command="{Binding TranslateCommand}">
                     <materialDesign:PackIcon Kind="ArrowRight" Height="21" Width="21"/>
                 </Button>
             </Grid>
@@ -79,7 +76,7 @@
 
                 <materialDesign:Card Padding="32" Margin="16" Background="#FF1A73E9" Foreground="AliceBlue">
 
-                    <TextBlock x:Name="textBlock" Style="{DynamicResource MaterialDesignTitleTextBlock}" Text="{Binding CopyText}" FontSize="20">
+                    <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Text="{Binding OutputText}" FontSize="20">
 
                     </TextBlock>
                 </materialDesign:Card>

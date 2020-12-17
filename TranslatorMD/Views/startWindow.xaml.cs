@@ -10,22 +10,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Speech.Synthesis;
+using TranslatorMD.ViewModels;
 
 namespace TranslatorMD.Views
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для startWindow.xaml
     /// </summary>
-    
-    public partial class MainWindow : Window
+    public partial class startWindow : Window
     {
-        
-        public MainWindow()
+        public startWindow()
         {
             InitializeComponent();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.appiKey=api.Text;
+            startWindow startw = new startWindow();
+            this.Close();
+             
         }
     }
 }
