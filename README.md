@@ -5,5 +5,3 @@
 
 ## [Пример рабочего приложения](https://github.com/alexmihalyk23/TranslatorMD/blob/master/Release.zip)
 
-# Для работы необходимо ввести ключ от Яндекс переводчика
-
