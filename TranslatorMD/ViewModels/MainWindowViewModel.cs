@@ -151,8 +151,8 @@ namespace TranslatorMD.ViewModels
                 {
                     copyCommand = new DelegateCommand(() =>
                     {
-                        Clipboard.SetText(_outputText);
-                    });
+                        Clipboard.SetText(Encoding.GetEncoding("UTF-8").GetString(Encoding.GetEncoding(1252).GetBytes(string.Join("", _outputText))));
+                });
                 }
 
                 return copyCommand;
