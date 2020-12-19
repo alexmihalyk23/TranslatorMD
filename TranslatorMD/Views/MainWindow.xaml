@@ -57,7 +57,7 @@
     HorizontalAlignment="Center" ItemsSource="{Binding Lang_to}" SelectedValue="ru" SelectedItem="{Binding SelectedLang_to, Mode=TwoWay}" FontSize="20" Height="32"/>
 
             </Grid>
-            <Grid Grid.Row="1" Grid.RowSpan="2">
+            <Grid Grid.Row="1" Grid.RowSpan="2" Margin="0,47.8,-0.2,-0.2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="625*"/>
                     <ColumnDefinition Width="11*"/>
@@ -66,11 +66,11 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <ScrollViewer HorizontalScrollBarVisibility="Auto" Margin="0,0,65.6,-0.2">
-                    <TextBox materialDesign:HintAssist.Hint="Нажмите, для ввода" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextWrapping="Wrap" Margin="5,40,75.6,4.8" FontSize="24" FontFamily="Bahnschrift Light" Text="{Binding InputText}"/>
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" Margin="15,-13,48.6,0.4">
+                    <TextBox materialDesign:HintAssist.Hint="Нажмите, для ввода" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,0,0,0" FontSize="24" FontFamily="Bahnschrift Light" Text="{Binding InputText}" Width="575"/>
                 </ScrollViewer>
-                
-                <Button Style="{StaticResource ResourceKey=MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Foreground="White" Background="#FF1A73E9" BorderBrush="#FF1A73E9"  Margin="581,46,14.916,362" Command="{Binding TranslateCommand}">
+
+                <Button Style="{StaticResource ResourceKey=MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Foreground="White" Background="#FF1A73E9" BorderBrush="#FF1A73E9"  Margin="588,10,9.6,352.4" Command="{Binding TranslateCommand}">
                     <materialDesign:PackIcon Kind="ArrowRight" Height="21" Width="21"/>
                 </Button>
             </Grid>
@@ -78,7 +78,7 @@
 
                 <materialDesign:Card Padding="32" Margin="16" Background="#FF1A73E9" Foreground="AliceBlue">
 
-                    <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Text="{Binding OutputText}" FontSize="20">
+                    <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Text="{Binding OutputText}" TextWrapping="Wrap" FontSize="20">
 
                     </TextBlock>
                 </materialDesign:Card>
