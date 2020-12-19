@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:viewmodels="clr-namespace:TranslatorMD.ViewModels"
-        FontFamily="{DynamicResource MaterialDesignFont}"   WindowStartupLocation="CenterScreen"  WindowStyle="None" Width="640" Height="480"  ResizeMode="NoResize" UseLayoutRounding="False" >
+        FontFamily="{DynamicResource MaterialDesignFont}"   WindowStartupLocation="CenterScreen" Width="640" Height="480"  ResizeMode="NoResize" UseLayoutRounding="False" WindowStyle="None" >
 
     <Window.DataContext>
         <viewmodels:MainWindowViewModel/>
@@ -66,8 +66,10 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-
-                <TextBox materialDesign:HintAssist.Hint="Нажмите, для ввода" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="5,40,5,5" FontSize="24" FontFamily="Bahnschrift Light" Grid.ColumnSpan="2" Text="{Binding InputText}"/>
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" Margin="0,0,49.6,-0.2">
+                    <TextBox materialDesign:HintAssist.Hint="Нажмите, для ввода" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextWrapping="Wrap" Margin="5,40,35,5" FontSize="24" FontFamily="Bahnschrift Light" Grid.ColumnSpan="2" Text="{Binding InputText}"/>
+                </ScrollViewer>
+                
                 <Button Style="{StaticResource ResourceKey=MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Foreground="White" Background="#FF1A73E9" BorderBrush="#FF1A73E9"  Margin="581,46,14.916,362" Command="{Binding TranslateCommand}">
                     <materialDesign:PackIcon Kind="ArrowRight" Height="21" Width="21"/>
                 </Button>
@@ -76,7 +78,7 @@
 
                 <materialDesign:Card Padding="32" Margin="16" Background="#FF1A73E9" Foreground="AliceBlue">
 
-                    <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Text="{Binding OutputText}" FontSize="20">
+                    <TextBlock TextWrapping="Wrap" Style="{DynamicResource MaterialDesignTitleTextBlock}" Text="{Binding OutputText}" FontSize="20">
 
                     </TextBlock>
                 </materialDesign:Card>
