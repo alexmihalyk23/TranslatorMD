@@ -100,7 +100,7 @@ namespace TranslatorMD.ViewModels
         {
             get
             {
-                return Encoding.GetEncoding("UTF-8").GetString(Encoding.GetEncoding(1252).GetBytes(string.Join("", _outputText)));
+                return  _outputText;
 
             }
             set
@@ -261,6 +261,8 @@ namespace TranslatorMD.ViewModels
                     string result = webClient1.DownloadString("https://fasttranslator.herokuapp.com/api/v1/text/to/text");
                     Console.WriteLine(result);
                     var obj = JsonConvert.DeserializeObject<TransOutput>(result);
+                    byte[] bytes = Encoding.Default.GetBytes(obj.data);
+                    obj.data = Encoding.UTF8.GetString(bytes);
 
 
                     OutputText = obj.data;
