@@ -134,7 +134,7 @@ namespace TranslatorMD.ViewModels
                 {
                     speakCommand = new DelegateCommand(() =>
                     {
-                        talk.Speak(Encoding.GetEncoding("UTF-8").GetString(Encoding.GetEncoding(1252).GetBytes(string.Join("", _outputText))));
+                        talk.Speak(_outputText);
                     });
                 }
 
@@ -151,7 +151,7 @@ namespace TranslatorMD.ViewModels
                 {
                     copyCommand = new DelegateCommand(() =>
                     {
-                        Clipboard.SetText(Encoding.GetEncoding("UTF-8").GetString(Encoding.GetEncoding(1252).GetBytes(string.Join("", _outputText))));
+                        Clipboard.SetText(_outputText);
                 });
                 }
 
