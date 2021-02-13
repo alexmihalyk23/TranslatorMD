@@ -258,7 +258,7 @@ namespace TranslatorMD.ViewModels
                     webClient1.QueryString.Add("lang", SelectedLang + "-" + SelectedLang_to);
                     webClient1.QueryString.Add("as", "text");
                     webClient1.QueryString.Add("source", _inputText);
-                    string result = webClient1.DownloadString("https://fasttranslator.herokuapp.com/api/v1.0/text/to/text");
+                    string result = webClient1.DownloadString("https://fasttranslator.herokuapp.com/api/v1/text/to/text");
                     Console.WriteLine(result);
                     var obj = JsonConvert.DeserializeObject<TransOutput>(result);
 
