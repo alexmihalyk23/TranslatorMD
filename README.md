@@ -2,6 +2,8 @@
 ## [Переводчик Material Design](https://github.com/alexmihalyk23/TranslatorMD)
 ## Переводчик основывается на api [fasttranslator](https://fasttranslator.herokuapp.com/api)
 > ![translator](https://user-images.githubusercontent.com/35634279/102473690-56bfb180-408a-11eb-862e-fa2e8ed2d7d5.png)
+> #Схема классов
+> ![classes](https://user-images.githubusercontent.com/35634279/109381456-25c2ef00-790d-11eb-9d05-835ca177d6f2.png)
 ## [Пример ViewModel](https://github.com/alexmihalyk23/TranslatorMD/blob/master/TranslatorMD/ViewModels/MainWindowViewModel.cs)
 
 ## Реализация возможностей
